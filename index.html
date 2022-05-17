@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Basic Captcha</title>
+</head>
+<body>
+	<div id="form-group">
+		<label id="numberOneText"></label> + <label id="numberTwoText"></label>?
+		<input type="text" id="total">
+		<input type="submit" value="Cevapla" onclick="start()">
+	</div>
+	<script type="text/javascript">
+		var numberOneText = Math.floor(Math.random() * 15) + 1;
+		var numberTwoText = Math.floor(Math.random() * 15) + 1;
+
+		document.getElementById("numberOneText").innerHTML = numberOneText;
+		document.getElementById("numberTwoText").innerHTML = numberTwoText;
+
+		function start(){
+			var incomingTotal = document.getElementById("total").value;
+			var total = numberOneText + numberTwoText;
+			if(incomingTotal == total){
+				alert('Cevap Doğru');
+			}else{
+				alert('Cevap Yanlış');
+			}
+		}
+	</script>
+</body>
+</html>
